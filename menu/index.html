@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | KK Restaurant - Navalur, OMR</title>
+    <link rel="icon" type="image/png" href="/assets/logo.jpeg">
+    <link rel="apple-touch-icon" href="/assets/logo.jpeg">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .menu-page-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 74px;
+            background: rgba(18, 5, 6, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(239, 212, 154, 0.16);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-page-nav {
+            width: min(1380px, 92%);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gold2);
+            font-size: 11px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 8px 14px;
+            border: 1px solid rgba(239, 212, 154, 0.25);
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--gold);
+            color: #180807;
+            border-color: var(--gold);
+        }
+
+        .menu-hero-section {
+            padding: 130px 20px 40px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 20%, rgba(201, 164, 92, 0.12), transparent 45%), #110405;
+        }
+
+        .menu-hero-section h1 {
+            font-size: clamp(38px, 6vw, 76px);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .menu-hero-section p {
+            color: #c4b4a2;
+            font-size: 13px;
+            letter-spacing: 1px;
+            max-width: 520px;
+            margin: 0 auto 24px;
+        }
+
+        .menu-actions-bar {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-book-wrap {
+            width: min(960px, 94%);
+            margin: 0 auto 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .menu-page-card {
+            position: relative;
+            background: #190809;
+            border: 1px solid rgba(239, 212, 154, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-page-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+            border-color: rgba(239, 212, 154, 0.4);
+        }
+
+        .menu-page-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            pointer-events: auto;
+        }
+
+        .page-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(18, 5, 6, 0.85);
+            border: 1px solid rgba(239, 212, 154, 0.3);
+            color: var(--gold2);
+            font-size: 9px;
+            letter-spacing: 2px;
+            padding: 5px 10px;
+            backdrop-filter: blur(8px);
+            border-radius: 2px;
+        }
+
+        .floating-back-btn {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 999;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(20, 6, 7, 0.9);
+            border: 1px solid rgba(239, 212, 154, 0.45);
+            color: var(--gold2);
+            padding: 12px 18px;
+            font-size: 10px;
+            letter-spacing: 2px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .floating-back-btn:hover {
+            background: var(--gold);
+            color: #180807;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .menu-page-header {
+                height: 64px;
+            }
+
+            .menu-hero-section {
+                padding: 100px 16px 30px;
+            }
+
+            .menu-hero-section h1 {
+                font-size: clamp(32px, 8vw, 46px);
+            }
+
+            .menu-book-wrap {
+                width: 96%;
+                gap: 16px;
+                margin-bottom: 70px;
+            }
+
+            .floating-back-btn {
+                bottom: 18px;
+                left: 16px;
+                padding: 10px 14px;
+                font-size: 9px;
+            }
+
+            .whatsapp {
+                bottom: 18px;
+                right: 16px;
+                padding: 10px 14px;
+                font-size: 9px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY TOP BAR -->
+    <header class="menu-page-header">
+        <div class="menu-page-nav">
+            <a class="logo" href="/#home">
+                <img class="logo-img" src="/assets/logo.jpeg" alt="KK Restaurant Logo">
+                <span class="logo-text">KK Restaurant</span>
+            </a>
+            <a class="back-link" href="/#menu">
+                <span>←</span> Back to Website
+            </a>
+        </div>
+    </header>
+
+    <!-- FLOATING QUICK BACK BUTTON -->
+    <a class="floating-back-btn" href="/#menu" aria-label="Go back to website">
+        <span>←</span> Back
+    </a>
+
+    <!-- WHATSAPP BUTTON -->
+    <a class="whatsapp" href="https://wa.me/917339461118" target="_blank" rel="noopener">WHATSAPP</a>
+
+    <!-- HERO HEADER -->
+    <section class="menu-hero-section">
+        <span class="eyebrow">KK RESTAURANT · NAVALUR</span>
+        <h1>Complete <span>Menu</span></h1>
+        <p>Explore our full collection of authentic Indian curries, tandoor specials, biriyanis, seafood and desserts.</p>
+        <div class="menu-actions-bar">
+            <a class="gold-btn" href="/#menu">
+                ← BACK TO HIGHLIGHTS
+            </a>
+            <a class="text-btn" href="/assets/kk-menu.pdf" download="KK-Restaurant-Menu.pdf">
+                DOWNLOAD PDF ⤓
+            </a>
+        </div>
+    </section>
+
+    <!-- FULL MENU PAGES CONTAINER -->
+    <main class="menu-book-wrap" id="menuBook">
+
+        <!-- Page 1 (Cover) -->
+        <article class="menu-page-card">
+            <span class="page-badge">COVER</span>
+            <img src="/assets/menu-pages/page-1.jpg" alt="KK Restaurant Menu Cover" loading="eager">
+        </article>
+
+        <!-- Page 2 (Soups) -->
+        <article class="menu-page-card">
+            <span class="page-badge">PAGE 01 · SOUPS</span>
+            <img src="/assets/menu-pages/page-2.jpg" alt="KK Restaurant Soups Menu" loading="eager">
+        </article>
+
+        <!-- Page 3 (Veg Starters) -->
+        <article class="menu-page-card">
+            <span class="page-badge">PAGE 02 · VEG STARTERS</span>
+            <img src="/assets/menu-pages/page-3.jpg" alt="KK Restaurant Veg Starters Menu" loading="lazy">
+        </article>
+
+        <!-- Page 4 (Non-Veg Starters) -->
+        <article class="menu-page-card">
+            <span class="page-badge">PAGE 03 · NON-VEG STARTERS</span>
+            <img src="/assets/menu-pages/page-4.jpg" alt="KK Restaurant Non-Veg Starters Menu" loading="lazy">
+        </article>
+
+        <!-- Page 5 (Kids Starters) -->
+        <article class="menu-page-card">
+            <span class="page-badge">PAGE 04 · KIDS STARTERS</span>
+            <img src="/assets/menu-pages/page-5.jpg" alt="KK Restaurant Kids Starters Menu" loading="lazy">
+        </article>
+
+        <!-- Page 6 (Seafood Special) -->
+        <article class="menu-page-card">
+            <span class="page-badge">PAGE 05 · SEAFOOD SPECIAL</span>
+            <img src="/assets/menu-pages/page-6.jpg" alt="KK Restaurant Seafood Special Menu" loading="lazy">
+        </article>
+
+        <!-- Page 7 (Tandoori Special) -->
+        <article class="menu-page-card">
+            <span class="page-badge">PAGE 06 · TANDOORI SPECIAL</span>
+            <img src="/assets/menu-pages/page-7.jpg" alt="KK Restaurant Tandoori Special Menu" loading="lazy">
+        </article>
+
+        <!-- Page 8 (Breads) -->
+        <article class="menu-page-card">
+            <span class="page-badge">PAGE 07 · BREADS</span>
+            <img src="/assets/menu-pages/page-8.jpg" alt="KK Restaurant Breads Menu" loading="lazy">
+        </article>
+
+        <!-- Page 9 (Veg Curries) -->
+        <article class="menu-page-card">
+            <span class="page-badge">PAGE 08 · VEG CURRIES</span>
+            <img src="/assets/menu-pages/page-9.jpg" alt="KK Restaurant Veg Curries Menu" loading="lazy">
+        </article>
+
+        <!-- Page 10 (Non-Veg Curries) -->
+        <article class="menu-page-card">
+            <span class="page-badge">PAGE 09 · NON-VEG CURRIES</span>
+            <img src="/assets/menu-pages/page-10.jpg" alt="KK Restaurant Non-Veg Curries Menu" loading="lazy">
+        </article>
+
+        <!-- Page 11 (Fried Rice & Noodles) -->
+        <article class="menu-page-card">
+            <span class="page-badge">PAGE 10 · FRIED RICE & NOODLES</span>
+            <img src="/assets/menu-pages/page-11.jpg" alt="KK Restaurant Fried Rice & Noodles Menu" loading="lazy">
+        </article>
+
+        <!-- Page 12 (Biriyani, Desserts & Beverages) -->
+        <article class="menu-page-card">
+            <span class="page-badge">PAGE 11 · BIRIYANI, DESSERTS & BEVERAGES</span>
+            <img src="/assets/menu-pages/page-12.jpg" alt="KK Restaurant Biriyani and Desserts Menu" loading="lazy">
+        </article>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <strong>KK</strong>
+                    <small>RESTAURANT</small>
+                </div>
+                <div class="footer-links">
+                    <a href="/#home">Home</a>
+                    <a href="/#about">About</a>
+                    <a href="/#specials">Signatures</a>
+                    <a href="/#menu">Menu Highlights</a>
+                    <a href="/#gallery">Gallery</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 KK Restaurant. All Rights Reserved.</p>
+                <p>Multi Cuisine Restaurant · Navalur · Chennai</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
