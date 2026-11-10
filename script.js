@@ -5,6 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("KK Restaurant JS loaded successfully");
     document.documentElement.classList.add("js-ready");
 
+    if (window.location.hash) {
+        const hashTarget = document.querySelector(window.location.hash);
+        if (hashTarget) {
+            setTimeout(function () {
+                hashTarget.scrollIntoView({ behavior: "smooth", block: "start" });
+                if (window.history && window.history.replaceState) {
+                    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+                }
+            }, 100);
+        }
+    }
+
     /* =====================================================
        SMOOTH SCROLL + MOBILE NAVIGATION
     ===================================================== */
@@ -50,6 +62,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 ).matches ? "auto" : "smooth",
                 block: "start"
             });
+
+            if (window.history && window.history.replaceState) {
+                window.history.replaceState(null, "", window.location.pathname + window.location.search);
+            }
         });
     });
 
